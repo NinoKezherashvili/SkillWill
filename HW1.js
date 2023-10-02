@@ -1,3 +1,5 @@
+
+
 // დაწერე ფუნქცია, რომელიც მიიღებს a და b
 // პარამეტრებს და დააბრუნებს ტექსტს
 // “ტოლია” თუ a უდრის b-ს, ხოლო
@@ -19,7 +21,7 @@ const CompareParams = (a, b) => {
 const ReturnCelsius = (tempF) => {
   if (typeof (tempF) === "number") {
     return (5 / 9) * (tempF - 32);
-  } else return "False";
+  } else return false;
 };
 
 
@@ -39,11 +41,11 @@ const ReturnCelsius = (tempF) => {
 const operations = ["+", "-", "*", "/"]
 
 const DoOperation = (a,b,op) => {
+  if (typeof(a) !== 'number' || typeof(b) !=='number' || operations.includes(op)=== false) return false
   if (op === '+') return a + b;
   if (op === '-') return a - b;
   if (op === '*') return a * b;
   if (op === '/') return a / b;
-  if (typeof(a) !== 'number' || typeof(b) !=='number' || operations.includes(op)=== false) return 'false'
 }
 
 

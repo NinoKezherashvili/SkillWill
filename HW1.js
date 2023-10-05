@@ -40,14 +40,18 @@ const ReturnCelsius = (tempF) => {
 
 const operations = ["+", "-", "*", "/"]
 
-const DoOperation = (a,b,op) => {
-  if (typeof(a) !== 'number' || typeof(b) !=='number' || operations.includes(op)=== false) return false
-  if (op === '+') return a + b;
-  if (op === '-') return a - b;
-  if (op === '*') return a * b;
-  if (op === '/') return a / b;
+const DoOperation = (a, b, op) => {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    return false;
+  } else if (op === '+') {
+    return a + b;
+  } else if (op === '-') {
+    return a - b;
+  } else if (op === '*') {
+    return a * b;
+  } else if (op === '/') {
+    return a / b;
+  } else {
+    return false; 
+  }
 };
-
-
-
-

@@ -12,12 +12,15 @@
 
 const returnYoungestPerson = (arr) => {
   let smallestAge = arr[0].age;
-  for (let n of arr) {
-    if (n.age < smallestAge) {
-      smallestAge = n.age;
+  let youngestPerson = arr[0];
+
+  for (let person of arr) {
+    if (person.age < smallestAge) {
+      smallestAge= person.age;
+      youngestPerson=person
     }
   }
-  return smallestAge;
+  return youngestPerson.name;
 };
 
 // ● დაწერე ფუნქცია, რომელიც პარამეტრად
@@ -28,7 +31,7 @@ const returnYoungestPerson = (arr) => {
 //shallow copy:
 
 const copyObjectShallow = (userObjS) => {
-  return (userCopyS = { ...userObjS });
+  return { ...userObjS };
 };
 
 //deep copy:
@@ -47,25 +50,20 @@ const getRandomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 let a, b;
-counta = 0;
-countb = 0;
+let counta = 0;
+let countb = 0;
 do {
   a = getRandomNumber(1, 6);
-  console.log(` I am a ${a}`);
   counta++;
 } while (a !== 3);
 
 do {
   b = getRandomNumber(1, 6);
-  console.log(` I am b ${b}`);
   countb++;
 } while (b !== 3);
 
-console.log(` I need ${counta} rolls`);
-console.log(` I need ${countb} rolls`);
-
 if (counta < countb) {
-  console.log(` winner is a`);
+  console.log(`Winner is player a - ${counta} rolls. Number of player b brolls - ${countb} `);
 } else {
-  console.log(` winner is b`);
+  console.log(`Winner is player b - ${countb} rolls. Number of player a rolls  - ${counta}`);
 }

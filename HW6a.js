@@ -1,3 +1,7 @@
+// შექმენი button, რომელზე დაწკაპების
+// შემდეგაც გაიხსნება მოდალი და მოდალის
+// უკან შავი/გამჭვირვალე background
+
 const modalButton = document.getElementById("modalButton");
 const closeModalButton = document.getElementById("closeModalButton");
 const modal = document.getElementById("modal");

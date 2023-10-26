@@ -1,0 +1,23 @@
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "my first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NinoKezherashvili/SkillWill.git"
+  },
+  "author": "Nino Kezherashvili",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NinoKezherashvili/SkillWill/issues"
+  },
+  
+  "homepage": "https://github.com/NinoKezherashvili/SkillWill#readme",
+  "dependencies": {
+    "validator": "^13.11.0"
+  }
+}

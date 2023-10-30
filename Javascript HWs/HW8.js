@@ -7,11 +7,9 @@
 
 const expo = (num, power, cb) => {
   let result = num;
-
   for (let i = 1; i < power; i++) {
     result = cb(result, num);
   }
-
   return result;
 };
 
@@ -25,7 +23,6 @@ console.log(c);
 const getData = async () => {
   try {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-
     if (!res.ok) {
       throw Error("Not good request");
     }

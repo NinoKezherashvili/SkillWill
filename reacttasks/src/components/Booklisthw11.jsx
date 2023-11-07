@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "./Cardhw11";
 
 const data = [
   {

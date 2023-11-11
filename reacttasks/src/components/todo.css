@@ -1,4 +1,18 @@
-.todo {
-    background-color: aqua;
-    width: 50%;
+.Container {
+  display: flex;
+  margin: 20px;
+  border: 2px dashed bisque;
+}
+
+.Todo {
+  background-color: darkkhaki;
+  width: 50%;
+}
+
+.Done {
+  background-color: silver;
+  width: 50%;
+}
+form {
+  margin: 20px;
 }

@@ -73,7 +73,8 @@ class TodoItemList extends Component {
   render() {
     return (
       <>
-        <form action="" onSubmit={this.addUser} className="todo">
+        <form action="" onSubmit={this.addUser}>
+          <h1>Create todo list</h1>
           <input
             type="text"
             onChange={this.onChange}
@@ -82,32 +83,32 @@ class TodoItemList extends Component {
           <button type="submit"> Add todo</button>
         </form>
 
-        <h2>My To Do List</h2>
+        <div className="Container">
+          <ul className="Todo">
+            <h2>My To Do List</h2>
+            {this.state.toDos.map((todo) => (
+              <TodoItem
+                key={todo.id}
+                id={todo.id}
+                todo={todo.task}
+                action={this.addCompleteTask}
+              />
+            ))}
+          </ul>
 
-        <ul>
-          {this.state.toDos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              id={todo.id}
-              todo={todo.task}
-              action={this.addCompleteTask}
-            />
-          ))}
-        </ul>
-
-        <h2>Completed Tasks</h2>
-
-        <ul>
-          {this.state.dones.map((done) => (
-            <DoneItem
-              key={done.id}
-              id={done.id}
-              todo={done.task}
-              remove={this.removeUser}
-              returnTodo={this.returnTodo}
-            />
-          ))}
-        </ul>
+          <ul className="Done">
+            <h2>Completed Tasks</h2>
+            {this.state.dones.map((done) => (
+              <DoneItem
+                key={done.id}
+                id={done.id}
+                todo={done.task}
+                remove={this.removeUser}
+                returnTodo={this.returnTodo}
+              />
+            ))}
+          </ul>
+        </div>
       </>
     );
   }

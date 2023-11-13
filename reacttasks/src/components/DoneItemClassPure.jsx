@@ -1,9 +1,9 @@
 //this is in order to prevent rerendering of the elements HW #13
 
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class DoneItem extends Component {
+class DoneItem extends PureComponent {
   render() {
     const { todo, remove, returnTodo, id } = this.props;
 

@@ -4,12 +4,12 @@
 // რომელზე დაჭერისას აღნიშნული დავალება გადაინაცვლებს შესრულებული დავალებების სიაში, ხოლო შესრულებული დავალებების სიაში ყოველ დავალებას ექნება წაშლის და შესასრულებელ
 // დავალებებში გადატანის ღილაკე
 
-import TodoItem from "./TodoListItem";
+import TodoItem from "././TodoListItemWithClassPure";
 import { Component } from "react";
 
 import "./todo.css";
 import { v4 as uuidv4 } from "uuid";
-import DoneItem from "./DoneItem";
+import DoneItem from "./DoneItemClassPure";
 
 class TodoItemList extends Component {
   state = {

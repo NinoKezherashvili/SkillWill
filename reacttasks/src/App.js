@@ -1,8 +1,12 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import router from "./router";
 import "./App.css";
-import TodoItemList from "./components/TodoListHW14";
-
 function App() {
-  return <TodoItemList />;
+  return (
+    <div className="App">
+    <RouterProvider router={createBrowserRouter(router)}/>
+    </div>
+  ); 
 }
 
 export default App;

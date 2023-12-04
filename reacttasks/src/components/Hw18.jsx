@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import HTTP18 from "./HTTP18Form";
 
 const API_KEY = "ic3Rk4m5A8k1x2Wvao_tx-049PxlqFm1_AukCsJ1po0AzFU0hg";
@@ -30,13 +29,14 @@ const Hw18 = () => {
       })
       .then((data) =>
         setTaskList(
-          data.items.map((task) => {
-            return {
-              taskName: task.taskName,
-              taskDescription: task.taskDescription,
-              id: task._uuid,
-            };
-          })
+          console.log(data)
+          // data.items.map((task) => {
+          //   return {
+          //     taskName: task.taskName,
+          //     taskDescription: task.taskDescription,
+          //     id: task._uuid,
+          //   };
+          // })
         )
       );
   };

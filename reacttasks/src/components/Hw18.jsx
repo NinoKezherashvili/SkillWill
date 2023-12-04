@@ -19,26 +19,13 @@ const Hw18 = () => {
           taskDescription,
         },
       ]),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Response failed");
-        }
-        console.log(res);
-        return res.json();
-      })
-      .then((data) =>
-        setTaskList(
-          console.log(data)
-          // data.items.map((task) => {
-          //   return {
-          //     taskName: task.taskName,
-          //     taskDescription: task.taskDescription,
-          //     id: task._uuid,
-          //   };
-          // })
-        )
-      );
+    }).then((res) => {
+      if (!res.ok) {
+        throw new Error("Response failed");
+      }
+      console.log(res);
+      return res.json();
+    });
   };
 
   const getTasks = () => {
@@ -55,7 +42,17 @@ const Hw18 = () => {
         }
         return res.json();
       })
-      .then((data) => console.log(data))
+      .then((data) =>
+        setTaskList(
+          data.items.map((task) => {
+            return {
+              taskName: task.taskName,
+              taskDescription: task.taskDescription,
+              id: task._uuid,
+            };
+          })
+        )
+      )
       .catch((err) => console.log(err));
   };
 
@@ -63,13 +60,16 @@ const Hw18 = () => {
     <div className="App">
       <HTTP18 onFormSubmit={onFormSubmit} />
 
-      <button onClick={getTasks}>Get users</button>
-      {taskList.map((task) => (
-        <div key={task.id}>
-          <h3>{task.taskName}</h3>
-          <h3>{task.taskDescription}</h3>
-        </div>
-      ))}
+      <button onClick={getTasks}>Get all task</button>
+      <div>
+        Todos
+        {taskList.map((task) => (
+          <div key={task.id}>
+            <h3>{task.taskName}</h3>
+            <p>{task.taskDescription}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

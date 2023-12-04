@@ -1,11 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import HTTP18 from "./components/HTTP18";
-import { useEffect } from "react";
+import HTTP18 from "./HTTP18Form";
 
 const API_KEY = "ic3Rk4m5A8k1x2Wvao_tx-049PxlqFm1_AukCsJ1po0AzFU0hg";
 
-function App18() {
+const Hw18 = () => {
   const [taskList, setTaskList] = useState([]);
 
   const onFormSubmit = (taskName, taskDescription) => {
@@ -60,7 +59,6 @@ function App18() {
       .catch((err) => console.log(err));
   };
 
-
   return (
     <div className="App">
       <HTTP18 onFormSubmit={onFormSubmit} />
@@ -74,6 +72,6 @@ function App18() {
       ))}
     </div>
   );
-}
+};
 
-export default App18;
+export default Hw18;
